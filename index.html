@@ -3,195 +3,347 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="에스제이금속시스템 - 금속·창호·자동문·강화도어·폴딩도어·방화문·넥산공사 전문 시공" />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="에스제이금속시스템 | 성실시공 · 책임시공" />
-  <meta property="og:description" content="금속·창호·자동문·강화도어·폴딩도어·방화문·넥산공사 전문 시공" />
+  <meta name="description" content="에스제이금속시스템 - 금속공사, 창호공사, 자동문, 강화도어, 폴딩도어, 방화문, 넥산공사 전문 시공업체" />
+  <meta name="keywords" content="에스제이금속시스템, 금속공사, 창호공사, 자동문, 강화도어, 폴딩도어, 방화문, 넥산공사" />
+  <meta property="og:title" content="에스제이금속시스템" />
+  <meta property="og:description" content="성실한 시공, 책임지는 마무리" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://sjmetalsystemco.kr/images/1000012708.jpg" />
   <meta property="og:url" content="https://sjmetalsystemco.kr/" />
-  <link rel="canonical" href="https://sjmetalsystemco.kr/" />
-  <title>에스제이금속시스템 | 성실시공 · 책임시공</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>에스제이금속시스템 | 금속·창호 시공 전문</title>
+  <style>
+    :root{
+      --bg:#0c1118;
+      --panel:#131a24;
+      --panel2:#18212d;
+      --text:#f5f7fb;
+      --muted:#aab5c4;
+      --line:#2a3544;
+      --accent:#e2b35a;
+      --accent2:#f4cf84;
+      --white:#ffffff;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(12,17,24,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px;font-weight:900;letter-spacing:-.04em}
+    .brand-mark{
+      width:42px;height:42px;border:2px solid var(--accent);
+      display:grid;place-items:center;font-size:16px;color:var(--accent);
+    }
+    .brand-text strong{display:block;font-size:20px}
+    .brand-text span{display:block;color:var(--muted);font-size:11px;letter-spacing:.12em}
+    nav{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:700}
+    nav a:hover{color:var(--accent2)}
+    .header-call{
+      padding:12px 16px;border:1px solid var(--accent);color:var(--accent2);
+      border-radius:8px;font-weight:800;white-space:nowrap;
+    }
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:26px;cursor:pointer}
+    .hero{
+      min-height:720px;
+      display:flex;align-items:center;
+      background:
+        linear-gradient(90deg,rgba(7,11,16,.94) 0%,rgba(7,11,16,.78) 48%,rgba(7,11,16,.40) 100%),
+        radial-gradient(circle at 85% 25%,rgba(226,179,90,.20),transparent 26%),
+        linear-gradient(135deg,#172231,#0a0f15 65%);
+      position:relative;overflow:hidden;
+    }
+    .hero:after{
+      content:"";position:absolute;inset:auto -10% -28% auto;
+      width:620px;height:620px;border:1px solid rgba(226,179,90,.16);transform:rotate(35deg);
+    }
+    .eyebrow{color:var(--accent2);font-weight:800;letter-spacing:.14em;font-size:13px}
+    h1{font-size:clamp(42px,6vw,78px);line-height:1.08;margin:18px 0 24px;letter-spacing:-.05em}
+    .hero p{font-size:clamp(17px,2vw,21px);color:#d7dde5;max-width:680px;margin:0 0 32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      min-height:52px;padding:0 22px;border-radius:8px;font-weight:900;
+      transition:.2s ease;
+    }
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-primary:hover{background:var(--accent2);transform:translateY(-2px)}
+    .btn-ghost{border:1px solid #4a5666;color:white}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent2)}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:58px;max-width:720px;background:var(--line);border:1px solid var(--line)}
+    .hero-stat{background:rgba(18,25,34,.88);padding:20px}
+    .hero-stat b{display:block;font-size:22px;color:var(--accent2)}
+    .hero-stat span{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+    section{padding:96px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:38px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);margin:8px 0 0;letter-spacing:-.04em}
+    .section-head p{max-width:550px;color:var(--muted);margin:0}
+    .about{background:#101722}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+    .about-main,.about-side{
+      background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:34px;
+    }
+    .about-main h3{font-size:30px;margin:0 0 14px}
+    .about-main p{color:#c7d0db}
+    .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+    .check{padding:16px;background:var(--panel2);border-radius:10px;color:#dfe6ee;font-weight:700}
+    .check:before{content:"✓";color:var(--accent);margin-right:8px}
+    .about-side{display:grid;gap:14px}
+    .info-row{display:flex;justify-content:space-between;gap:15px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+    .info-row:last-child{border-bottom:0;padding-bottom:0}
+    .info-row span{color:var(--muted)}
+    .services{background:#0c1118}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .service-card{
+      min-height:230px;padding:28px;border:1px solid var(--line);border-radius:14px;
+      background:linear-gradient(145deg,#161f2a,#111821);
+      position:relative;overflow:hidden;
+    }
+    .service-card:after{
+      content:"";position:absolute;right:-30px;bottom:-45px;width:120px;height:120px;
+      border:1px solid rgba(226,179,90,.18);transform:rotate(45deg);
+    }
+    .service-num{font-size:12px;color:var(--accent);font-weight:900;letter-spacing:.18em}
+    .service-card h3{font-size:24px;margin:36px 0 10px}
+    .service-card p{color:var(--muted);font-size:14px;margin:0}
+    .gallery{background:#101722}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work-card{
+      aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+      position:relative;background:
+        linear-gradient(135deg,rgba(226,179,90,.18),transparent 50%),
+        linear-gradient(145deg,#223044,#121923);
+    }
+    .work-card:before{
+      content:"시공 사진";position:absolute;inset:0;display:grid;place-items:center;
+      color:rgba(255,255,255,.38);font-weight:900;letter-spacing:.12em;
+    }
+    .work-card .caption{
+      position:absolute;left:0;right:0;bottom:0;padding:18px 20px;
+      background:linear-gradient(transparent,rgba(0,0,0,.88));
+    }
+    .work-card .caption strong{display:block;font-size:18px}
+    .work-card .caption span{font-size:13px;color:#cad2dc}
+    .contact{background:#0b1017}
+    .contact-box{
+      border:1px solid rgba(226,179,90,.34);border-radius:18px;
+      padding:44px;background:
+        linear-gradient(110deg,rgba(226,179,90,.09),transparent 42%),
+        var(--panel);
+      display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+    }
+    .contact-box h2{font-size:clamp(32px,4vw,50px);line-height:1.15;margin:10px 0 18px}
+    .contact-box p{color:var(--muted);margin:0}
+    .contact-actions{display:grid;gap:12px}
+    .contact-actions a{min-height:58px}
+    footer{padding:34px 0 90px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+    .mobile-bar{
+      display:none;position:fixed;z-index:60;left:12px;right:12px;bottom:12px;
+      gap:8px;padding:8px;background:rgba(12,17,24,.95);border:1px solid var(--line);border-radius:14px;
+      box-shadow:0 16px 40px rgba(0,0,0,.35)
+    }
+    .mobile-bar a{flex:1;min-height:48px;border-radius:9px;display:grid;place-items:center;font-weight:900}
+    .mobile-bar .call{background:var(--accent);color:#111}
+    .mobile-bar .inquiry{background:#1e2937;color:#fff}
+    @media(max-width:950px){
+      nav{display:none}
+      .menu-btn{display:block}
+      .header-call{display:none}
+      .hero{min-height:640px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .about-grid,.contact-box{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      .topbar{min-height:68px}
+      .brand-text strong{font-size:18px}
+      .brand-mark{width:38px;height:38px}
+      .hero{min-height:auto;padding:96px 0 72px}
+      h1{font-size:44px}
+      .hero p{font-size:17px}
+      .hero-actions{display:grid;grid-template-columns:1fr 1fr}
+      .hero-stats{grid-template-columns:1fr;margin-top:38px}
+      section{padding:70px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .checks{grid-template-columns:1fr}
+      .service-grid,.gallery-grid{grid-template-columns:1fr}
+      .service-card{min-height:200px}
+      .contact-box{padding:28px 22px}
+      .footer-grid{display:block}
+      .mobile-bar{display:flex}
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="홈으로">
-        <span class="brand-mark">SJ</span>
-        <span class="brand-name">에스제이금속시스템</span>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="#top" aria-label="에스제이금속시스템 홈">
+        <div class="brand-mark">SJ</div>
+        <div class="brand-text">
+          <strong>에스제이금속시스템</strong>
+          <span>METAL · WINDOW · DOOR</span>
+        </div>
       </a>
-      <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-      <nav class="nav">
+      <nav>
         <a href="#about">회사소개</a>
         <a href="#services">시공분야</a>
-        <a href="#portfolio">시공사례</a>
+        <a href="#works">시공사례</a>
         <a href="#contact">문의하기</a>
       </nav>
-      <a class="call-top" href="tel:03180558836">☎ 031-8055-8836</a>
+      <a class="header-call" href="tel:03180558836">☎ 031-8055-8836</a>
+      <button class="menu-btn" aria-label="메뉴 열기" onclick="toggleMenu()">☰</button>
+    </div>
+    <div id="mobileMenu" style="display:none;border-top:1px solid var(--line);background:#0c1118">
+      <div class="wrap" style="display:grid;padding:16px 0;gap:14px;font-weight:800">
+        <a href="#about" onclick="toggleMenu()">회사소개</a>
+        <a href="#services" onclick="toggleMenu()">시공분야</a>
+        <a href="#works" onclick="toggleMenu()">시공사례</a>
+        <a href="#contact" onclick="toggleMenu()">문의하기</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <p class="eyebrow">METAL · WINDOW · DOOR CONSTRUCTION</p>
-        <h1>성실한 시공,<br><strong>책임지는 마무리</strong></h1>
-        <p class="hero-copy">
-          금속 · 창호 · 자동문 · 강화도어 · 폴딩도어 · 방화문 · 넥산공사<br>
-          현장 여건에 맞는 정확한 시공으로 신뢰를 쌓아갑니다.
-        </p>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">SJ METAL SYSTEM</div>
+        <h1>성실한 시공,<br>책임지는 마무리</h1>
+        <p>금속·창호·자동문·강화도어·폴딩도어·방화문·넥산공사까지 현장 여건에 맞는 정확한 시공으로 신뢰를 쌓아갑니다.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="tel:03180558836">전화 상담</a>
-          <a class="btn ghost" href="#services">시공 분야 보기</a>
+          <a class="btn btn-primary" href="tel:03180558836">☎ 전화 상담</a>
+          <a class="btn btn-ghost" href="#services">시공 분야 보기</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>현장 중심</b><span>조건을 먼저 확인하는 실무형 시공</span></div>
+          <div class="hero-stat"><b>책임 시공</b><span>상담부터 마감까지 꼼꼼하게</span></div>
+          <div class="hero-stat"><b>신속 대응</b><span>문의·견적·현장 대응을 빠르게</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section intro" id="about">
-      <div class="container two-col">
-        <div>
-          <p class="section-kicker">ABOUT SJ METAL SYSTEM</p>
-          <h2>현장을 이해하는<br>금속·창호 시공 전문업체</h2>
-        </div>
-        <div class="intro-copy">
-          <p>에스제이금속시스템은 현장 조건과 고객 요구를 꼼꼼하게 확인하고, 공정별 품질과 마감 완성도를 중요하게 생각합니다.</p>
-          <p>소규모 보수부터 상가·공장·건축현장 시공까지, 상담부터 시공 완료까지 책임 있게 진행합니다.</p>
-          <div class="trust-row">
-            <div><b>정확한</b><span>현장 실측</span></div>
-            <div><b>꼼꼼한</b><span>시공·마감</span></div>
-            <div><b>책임있는</b><span>사후 대응</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="container">
-        <p class="section-kicker">OUR SERVICES</p>
-        <h2>주요 시공 분야</h2>
-        <div class="service-grid">
-          <article class="service-card">
-            <span class="num">01</span>
-            <h3>금속공사</h3>
-            <p>각종 금속 구조물, 잡철, 프레임 및 현장 맞춤 제작·설치</p>
-          </article>
-          <article class="service-card">
-            <span class="num">02</span>
-            <h3>창호공사</h3>
-            <p>알루미늄 창호, 샷시 및 건축물 용도에 맞춘 창호 시공</p>
-          </article>
-          <article class="service-card">
-            <span class="num">03</span>
-            <h3>자동문</h3>
-            <p>상가·사무실·건물 출입구 자동문 설치 및 교체 시공</p>
-          </article>
-          <article class="service-card">
-            <span class="num">04</span>
-            <h3>강화도어</h3>
-            <p>강화유리 도어, 출입문 프레임 및 부속 시공</p>
-          </article>
-          <article class="service-card">
-            <span class="num">05</span>
-            <h3>폴딩도어</h3>
-            <p>상업공간·테라스·매장 등 개방감을 높이는 폴딩도어 시공</p>
-          </article>
-          <article class="service-card accent-card">
-            <span class="num">06</span>
-            <h3>방화문</h3>
-            <p>건축물 용도와 현장 조건에 맞춘 방화문 설치·교체 및 부속 시공</p>
-          </article>
-          <article class="service-card">
-            <span class="num">07</span>
-            <h3>넥산공사</h3>
-            <p>차양·캐노피·지붕 등 폴리카보네이트(넥산) 제작 및 설치 시공</p>
-          </article>
-          <article class="service-card accent-card">
-            <span class="num">08</span>
-            <h3>현장 맞춤 시공</h3>
-            <p>현장 실측 후 용도·예산·마감 조건에 맞춘 시공 제안</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process">
-      <div class="container">
-        <p class="section-kicker">WORK PROCESS</p>
-        <h2>상담부터 시공까지</h2>
-        <div class="process-grid">
-          <div><span>01</span><h3>상담 접수</h3><p>공사 내용과 현장 조건을 확인합니다.</p></div>
-          <div><span>02</span><h3>현장 확인</h3><p>실측 및 필요한 공정을 검토합니다.</p></div>
-          <div><span>03</span><h3>견적·일정</h3><p>공사 범위와 일정을 협의합니다.</p></div>
-          <div><span>04</span><h3>시공·마감</h3><p>안전하고 꼼꼼하게 시공합니다.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section portfolio" id="portfolio">
-      <div class="container">
-        <div class="portfolio-head">
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="section-head">
           <div>
-            <p class="section-kicker">PORTFOLIO</p>
-            <h2>시공사례</h2>
+            <div class="eyebrow">ABOUT SJ METAL SYSTEM</div>
+            <h2>현장을 이해하는<br>금속·창호 시공 전문업체</h2>
           </div>
-          <p>에스제이금속시스템의 실제 시공 현장 사진입니다.<br>PC와 모바일에서 자동으로 크기가 조정됩니다.</p>
+          <p>에스제이금속시스템은 현장 조건과 고객 요구를 꼼꼼하게 확인하고, 공정별 품질과 마감 완성도를 중요하게 생각합니다.</p>
         </div>
-        <div class="portfolio-grid photo-grid">
-          <figure class="photo"><img src="images/1000012708.jpg" alt="에스제이금속시스템 시공현장 1"><figcaption>시공현장 01</figcaption></figure>
-          <figure class="photo"><img src="images/1000012704.jpg" alt="에스제이금속시스템 시공현장 2"><figcaption>시공현장 02</figcaption></figure>
-          <figure class="photo"><img src="images/1000012709.jpg" alt="에스제이금속시스템 시공현장 3"><figcaption>시공현장 03</figcaption></figure>
-          <figure class="photo"><img src="images/1000018584.jpg" alt="에스제이금속시스템 시공현장 4"><figcaption>시공현장 04</figcaption></figure>
-          <figure class="photo"><img src="images/1000018583.jpg" alt="에스제이금속시스템 시공현장 5"><figcaption>시공현장 05</figcaption></figure>
-          <figure class="photo"><img src="images/1000018582.jpg" alt="에스제이금속시스템 시공현장 6"><figcaption>시공현장 06</figcaption></figure>
-          <figure class="photo"><img src="images/1000018581.jpg" alt="에스제이금속시스템 시공현장 7"><figcaption>시공현장 07</figcaption></figure>
+        <div class="about-grid">
+          <div class="about-main">
+            <h3>상담부터 시공 완료까지 책임 있게 진행합니다.</h3>
+            <p>소규모 보수부터 상가·공장·건축현장 시공까지, 현장 상황에 맞는 공법과 자재를 검토해 안정적으로 시공합니다.</p>
+            <div class="checks">
+              <div class="check">정확한 현장 실측</div>
+              <div class="check">꼼꼼한 시공·마감</div>
+              <div class="check">책임있는 사후 대응</div>
+            </div>
+          </div>
+          <div class="about-side">
+            <div class="info-row"><span>업체명</span><strong>에스제이금속시스템</strong></div>
+            <div class="info-row"><span>대표 전화</span><strong>031-8055-8836</strong></div>
+            <div class="info-row"><span>팩스</span><strong>031-8055-8862</strong></div>
+            <div class="info-row"><span>홈페이지</span><strong>sjmetalsystemco.kr</strong></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="container cta-inner">
-        <div>
-          <p>현장 상담 및 견적 문의</p>
-          <h2>공사 내용이 정해지지 않았어도<br>편하게 문의주세요.</h2>
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">OUR SERVICES</div>
+            <h2>주요 시공 분야</h2>
+          </div>
+          <p>금속과 창호 관련 공사를 한 곳에서 상담하고 시공할 수 있도록 주요 공정을 폭넓게 대응합니다.</p>
         </div>
-        <a class="cta-phone" href="tel:03180558836">
-          <small>대표전화</small>
-          <strong>031-8055-8836</strong>
-        </a>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-num">01</div><h3>금속공사</h3><p>각종 금속 구조물, 잡철, 프레임, 현장 맞춤 제작·설치</p></article>
+          <article class="service-card"><div class="service-num">02</div><h3>창호공사</h3><p>알루미늄·샷시·창호 설치 및 교체, 현장 맞춤 시공</p></article>
+          <article class="service-card"><div class="service-num">03</div><h3>자동문</h3><p>상가·사무실·공장 출입구 자동문 설치 및 교체</p></article>
+          <article class="service-card"><div class="service-num">04</div><h3>강화도어</h3><p>강화유리문, 프레임, 손잡이 등 출입문 종합 시공</p></article>
+          <article class="service-card"><div class="service-num">05</div><h3>폴딩도어</h3><p>상가·테라스·공간 분리용 폴딩도어 맞춤 제작·설치</p></article>
+          <article class="service-card"><div class="service-num">06</div><h3>방화문</h3><p>현장 규격에 맞춘 방화문 교체 및 설치 시공</p></article>
+          <article class="service-card"><div class="service-num">07</div><h3>넥산공사</h3><p>캐노피·차양·지붕 등 넥산 판넬 설치 및 보수</p></article>
+          <article class="service-card"><div class="service-num">08</div><h3>보수·교체</h3><p>노후 창호, 금속 구조물, 출입문 보수 및 부분 교체</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <p class="section-kicker">CONTACT</p>
-          <h2>에스제이금속시스템</h2>
-          <p class="contact-copy">성실시공 · 책임시공을 기본으로 현장에 맞는 최선의 결과를 만들겠습니다.</p>
+    <section class="gallery" id="works">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">PROJECTS</div>
+            <h2>시공 사례</h2>
+          </div>
+          <p>아래 영역은 실제 시공사진으로 교체하기 쉽게 구성했습니다. 사진만 넣으면 PC와 스마트폰에서 자동으로 맞춰집니다.</p>
         </div>
+        <div class="gallery-grid">
+          <div class="work-card"><div class="caption"><strong>금속공사</strong><span>현장 맞춤 제작·설치</span></div></div>
+          <div class="work-card"><div class="caption"><strong>창호공사</strong><span>샷시·창호 시공</span></div></div>
+          <div class="work-card"><div class="caption"><strong>자동문</strong><span>출입구 자동문 설치</span></div></div>
+          <div class="work-card"><div class="caption"><strong>강화도어</strong><span>강화유리문 및 프레임</span></div></div>
+          <div class="work-card"><div class="caption"><strong>방화문</strong><span>방화문 교체·설치</span></div></div>
+          <div class="work-card"><div class="caption"><strong>넥산공사</strong><span>캐노피·차양·지붕 시공</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
         <div class="contact-box">
-          <dl>
-            <div><dt>대표전화</dt><dd><a href="tel:03180558836">031-8055-8836</a></dd></div>
-            <div><dt>팩스</dt><dd>031-8055-8862</dd></div>
-            <div><dt>주요업무</dt><dd>금속 · 창호 · 자동문 · 강화도어 · 폴딩도어 · 방화문 · 넥산공사</dd></div>
-          </dl>
+          <div>
+            <div class="eyebrow">CONTACT</div>
+            <h2>현장 상담과 견적 문의는<br>전화로 빠르게 도와드립니다.</h2>
+            <p>시공 장소, 공사 종류, 대략적인 규격을 알려주시면 상담이 더 빠릅니다.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="tel:03180558836">☎ 031-8055-8836 전화하기</a>
+            <a class="btn btn-ghost" href="sms:03180558836">문자로 문의하기</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <div><b>에스제이금속시스템</b><span>성실시공 · 책임시공</span></div>
-      <p>© 2026 SJ METAL SYSTEM. All Rights Reserved.</p>
+    <div class="wrap footer-grid">
+      <div>
+        <strong style="color:#fff">에스제이금속시스템</strong><br>
+        금속 · 창호 · 자동문 · 강화도어 · 폴딩도어 · 방화문 · 넥산공사
+      </div>
+      <div>대표전화 031-8055-8836 · 팩스 031-8055-8862<br>© SJ METAL SYSTEM. All rights reserved.</div>
     </div>
   </footer>
 
   <div class="mobile-bar">
-    <a href="tel:03180558836">☎ 전화상담 031-8055-8836</a>
+    <a class="call" href="tel:03180558836">☎ 전화상담</a>
+    <a class="inquiry" href="#contact">견적문의</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleMenu(){
+      const menu=document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
